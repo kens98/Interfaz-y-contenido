@@ -5816,3 +5816,23 @@ All at ###SITENAME###
 		$site_name
 	), $email_change_email['message'], $email_change_email['headers'] );
 }
+
+//agregado
+function configuracionTema(){
+
+	define( 'HEADER_IMAGE', ''.get_site_url().'/wp-content/uploads/2018/02/what-are-wordpress-hooks.png' );
+	
+}
+
+add_action('after_setup_theme','configuracionTema',10,1);
+
+
+// 
+
+function mitema(){
+	wp_enqueue_style('stylePersonalizado',get_template_directory_uri().'/stylePersonalizado.css');
+	wp_enqueue_script('scriptPersonalizado',get_template_directory_uri().'/scriptPersonalizado.js');
+}
+add_action('wp_enqueue_scripts','mitema');
+
+
